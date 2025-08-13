@@ -1,0 +1,17 @@
+[project]
+name = "asky"
+version = "0.0.1"
+description = "asky - Unified CLI for all AI providers"
+authors = [
+    { name="jetroni", email="jetronsaiti@gmail.com" },
+    { name="femi", email="femi.havziu123@gmail.com" }
+]
+dependencies = [
+    "typer[all]==0.12.3",
+    "openai>=1.40.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.8.0"
+]
+
+[project.scripts]
+asky = "asky.cli:app"
