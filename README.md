@@ -1,6 +1,6 @@
-# asky
+# askora
 
-asky is a unified Python CLI for interacting with multiple AI providers like OpenAI and Ollama. Send prompts, get
+askora is a unified Python CLI for interacting with multiple AI providers like OpenAI and Ollama. Send prompts, get
 responses, and switch between providers seamlessly, all from the command line.
 
 ---
@@ -20,8 +20,8 @@ responses, and switch between providers seamlessly, all from the command line.
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/jetroni/asky.git
-cd asky
+git clone https://github.com/jetroni/askora.git
+cd askora
 python -m venv .venv
 source .venv/bin/activate   # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -40,19 +40,19 @@ pip install --editable .
 Basic usage:
 
 ```bash
-asky --type openai --prompt "Hello AI"
+askora --type openai --prompt "Hello AI"
 ```
 
 Run with async mode:
 
 ```bash
-asky --type openai --prompt "Hello AI" --async-mode
+askora --type openai --prompt "Hello AI" --async-mode
 ```
 
 Ollama example (with base URL):
 
 ```bash
-asky --type ollama --base-url http://localhost:11434.com --model codellama --prompt "Hello"
+askora --type ollama --base-url http://localhost:11434.com --model codellama --prompt "Hello"
 ```
 
 ---
