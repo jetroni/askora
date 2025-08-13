@@ -1,17 +1,17 @@
-# askora
+# AskOra
 
-askora is a unified Python CLI for interacting with multiple AI providers like OpenAI and Ollama. Send prompts, get
-responses, and switch between providers seamlessly, all from the command line.
+AskOra is a unified Python CLI for interacting with multiple AI providers like OpenAI and Ollama. Send prompts, get responses, and switch between providers seamlessly, all from the command line.
 
 ---
 
 ## Features
 
-- Single CLI to interact with multiple AI providers
-- Supports **OpenAI**, **Ollama**, and more in the future
-- Returns structured responses with tokens used and execution time
-- Supports **sync** and **async** execution
-- Clean error handling for missing models, invalid API keys, etc.
+* Single CLI to interact with multiple AI providers
+* Supports **OpenAI**, **Ollama**, and more in the future
+* Returns structured responses with tokens used and execution time
+* Supports **sync** and **async** execution
+* Clean error handling for missing models, invalid API keys, etc.
+* Available on **PyPI** as `askora`
 
 ---
 
@@ -25,6 +25,12 @@ cd askora
 python -m venv .venv
 source .venv/bin/activate   # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
+```
+
+Or install directly from PyPI:
+
+```bash
+pip install askora
 ```
 
 (Optional) Make the CLI globally executable:
@@ -52,7 +58,7 @@ askora --type openai --prompt "Hello AI" --async-mode
 Ollama example (with base URL):
 
 ```bash
-askora --type ollama --base-url http://localhost:11434.com --model codellama --prompt "Hello"
+askora --type ollama --base-url http://localhost:11434 --model codellama --prompt "Hello"
 ```
 
 ---
@@ -60,7 +66,7 @@ askora --type ollama --base-url http://localhost:11434.com --model codellama --p
 ## CLI Options
 
 | Option         | Description                                       |
-|----------------|---------------------------------------------------|
+| -------------- | ------------------------------------------------- |
 | `--type`       | AI provider type (openai, ollama)                 |
 | `--prompt`     | Text prompt to send to the AI                     |
 | `--key`        | API key for providers that require authentication |
@@ -79,9 +85,7 @@ All responses are returned as a structured JSON object:
   "provider": "openai",
   "model": "gpt-4o-mini",
   "output": "Hello! How can I assist you today?",
-  "raw": {
-    ...
-  },
+  "raw": {...},
   "tokens_used": 17,
   "duration_ms": 543
 }
@@ -93,9 +97,9 @@ All responses are returned as a structured JSON object:
 
 We welcome contributions!
 
-- Add support for new AI providers
-- Improve error handling
-- Enhance async execution and CLI experience
+* Add support for new AI providers
+* Improve error handling
+* Enhance async execution and CLI experience
 
 Please fork the repo and submit a pull request.
 
@@ -105,3 +109,14 @@ Please fork the repo and submit a pull request.
 
 MIT License. Free to use and modify.
 
+---
+
+## PyPI
+
+AskOra is published on PyPI. Install via:
+
+```bash
+pip install askora
+```
+
+Stay up to date with the latest releases and check the package page: [https://pypi.org/project/askora/](https://pypi.org/project/askora/)
