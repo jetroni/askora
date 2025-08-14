@@ -6,15 +6,18 @@ from askora.providers import AIProvider
 PROVIDERS = {}
 
 
-def load_providers():
+def load_providers(user_providers_path=None):
     # Scan built-in providers
     package = 'askora.providers'
     for _, name, _ in pkgutil.iter_modules([str(Path(__file__).parent / "providers")]):
         module = importlib.import_module(f"{package}.{name}")
         register_provider_from_module(module)
 
-    # Scan external user providers
-    user_path = Path.cwd() / "providers"
+    if user_providers_path is None:
+        user_path = Path.cwd() / "providers"
+    else:
+        user_path = Path(user_providers_path)
+
     if user_path.exists():
         for file in user_path.glob("*.py"):
             if file.name != "__init__.py":
@@ -32,9 +35,9 @@ def register_provider_from_module(module):
             PROVIDERS[obj.name] = obj
 
 
-def get_provider(provider_type, **kwargs):
+def get_provider(provider_type, user_providers_path=None, **kwargs):
     if not PROVIDERS:
-        load_providers()
+        load_providers(user_providers_path)
     provider_class = PROVIDERS.get(provider_type)
     if not provider_class:
         raise ValueError(f"Provider '{provider_type}' not found.")
