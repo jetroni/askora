@@ -1,13 +1,13 @@
 # AskOra
 
-AskOra is a unified Python CLI for interacting with multiple AI providers like OpenAI and Ollama. Send prompts, get responses, and switch between providers seamlessly, all from the command line.
+AskOra is a unified Python CLI for interacting with multiple AI providers like OpenAI, Ollama and Anthropic(Claude). Send prompts, get responses, and switch between providers seamlessly, all from the command line.
 
 ---
 
 ## Features
 
 * Single CLI to interact with multiple AI providers
-* Supports **OpenAI**, **Ollama**, and more in the future
+* Supports **OpenAI**, **Ollama**, **Anthropic(Claude)** and more in the future
 * Returns structured responses with tokens used and execution time
 * Supports **sync** and **async** execution
 * Clean error handling for missing models, invalid API keys, etc.
