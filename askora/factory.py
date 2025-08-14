@@ -1,11 +1,12 @@
-from .providers import OpenAIProvider, OllamaProvider, AIProvider, ClaudeProvider
+from .providers import OpenAIProvider, OllamaProvider, AIProvider, ClaudeProvider, DeepSeekProvider
 
 
 def get_provider(name: str, api_key: str = None, model: str = None, base_url: str = None) -> AIProvider:
     providers = {
         "openai": OpenAIProvider,
         "ollama": OllamaProvider,
-        "claude": ClaudeProvider
+        "claude": ClaudeProvider,
+        "deepseek": DeepSeekProvider
     }
     name = name.lower()
     if name not in providers:
