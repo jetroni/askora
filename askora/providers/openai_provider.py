@@ -5,6 +5,8 @@ from .base import AIProvider
 
 
 class OpenAIProvider(AIProvider):
+    name = "openai"
+
     def generate(self, prompt: str, **kwargs) -> AIResponse:
         start = time.time()
         client = OpenAI(api_key=self.api_key)

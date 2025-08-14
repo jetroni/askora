@@ -5,6 +5,8 @@ from .base import AIProvider
 
 
 class ClaudeProvider(AIProvider):
+    name = "claude"
+
     def generate(self, prompt: str, **kwargs) -> AIResponse:
         start = time.time()
         client = Anthropic(api_key=self.api_key, base_url=self.base_url)

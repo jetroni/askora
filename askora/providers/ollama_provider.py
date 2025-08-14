@@ -5,6 +5,8 @@ from .base import AIProvider
 
 
 class OllamaProvider(AIProvider):
+    name = "ollama"
+
     def __init__(self, api_key: str = None, model: str = None, base_url: str = "http://localhost:11434"):
         super().__init__(api_key, model, base_url)
         self.base_url = base_url.rstrip("/")

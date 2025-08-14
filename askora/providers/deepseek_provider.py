@@ -5,6 +5,8 @@ from .base import AIProvider
 
 
 class DeepSeekProvider(AIProvider):
+    name = "deepseek"
+
     def __init__(self, api_key: str = None, model: str = None, base_url: str = None):
         super().__init__(api_key, model, base_url or "https://api.deepseek.com")
 

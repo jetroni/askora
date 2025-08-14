@@ -23,7 +23,10 @@ def main(
         base_url: str = typer.Option(None, help="Base URL"),
         async_mode: bool = typer.Option(False, "--async-mode", help="Run in async mode"),
         version: bool = typer.Option(
-            None, "--version", callback=version_callback, is_eager=True, help="Show version and exit"
+            None, "--version", "-v",
+            callback=version_callback,
+            is_eager=True,
+            help="Show version and exit"
         )
 ):
     """Send a prompt to an AI provider."""

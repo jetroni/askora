@@ -1,9 +1,12 @@
 from abc import ABC, abstractmethod
 import asyncio
+
 from ..models import AIResponse
 
 
 class AIProvider(ABC):
+    name: str
+
     def __init__(self, api_key: str = None, model: str = None, base_url: str = None):
         self.api_key = api_key
         self.model = model
@@ -12,7 +15,7 @@ class AIProvider(ABC):
     @abstractmethod
     def generate(self, prompt: str, **kwargs) -> AIResponse:
         """Synchronous generate method."""
-        pass
+        raise NotImplementedError
 
     async def agenerate(self, prompt: str, **kwargs) -> AIResponse:
         """Async generate method (default wraps sync)."""
